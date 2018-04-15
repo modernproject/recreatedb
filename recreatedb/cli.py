@@ -1,5 +1,8 @@
 import click
-from recreatedb.core import configuration
+from recreatedb.core import (
+    configuration,
+    run
+)
 
 @click.group()
 def cli():
@@ -10,18 +13,17 @@ def cli():
     #     print("Please use a Python 3.6 virtualenv.")
     #     raise SystemExit
 
-@cli.command(None)
-def run(user, cli):
-    configuration()
+@cli.command('start')
+# @click.option('--path', default='~/all_databases.sql', help='Database Location', required=True)
+def start():
+    run()
 
 @cli.command('configure')
-def configure(user, cli):
+def configure():
     configuration()
-
 
 def main():
     cli()
-
 
 if __name__ == '__main__':
     main()

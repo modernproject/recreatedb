@@ -10,7 +10,7 @@ def check_postgres_install():
     Ensure system has Postgres installed and available on the shell.
     """
     pass
-    if (false):
+    if (False):
         install_postgres()
 
 def install_postgres():
@@ -37,7 +37,7 @@ def loaddb():
     """
     pass
 
-def check_for_dump();
+def check_for_dump():
     """
     Ensure a database dump exists to work with.
     """
