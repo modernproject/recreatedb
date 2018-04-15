@@ -1,2 +1,2 @@
-# recreatedb
-Recreate a Postgres DB for Django Development
+# firecli
+Set of command line tools for Financial Independience Retire Early (FIRE) calculations
