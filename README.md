@@ -6,6 +6,43 @@ Command Line Interface tool that looks for a database backup in the form of an .
 
 To use it assumes you have the Postgres command line tools available on your bash config/profile. If you do not have these tools follow the _Install Postgres App_ section.
 
+## Install recreatedb
+
+To add `recreatedb` to the your path, clone it then run the following to create a simlink.
+
+```bash
+# Commands
+pip3 install recreatedb
+```
+
+## Configure
+
+```bash
+# Commands
+recreatedb configure
+```
+
+This will create a JSON configuration file at `~/.recreatedb`:
+
+```
+{
+  "DATABASE_NAME": "<databse>",
+  "DATABASE_USER": "<user>",
+  "DUMP_LOCATION": "<location of SQL file>"
+}
+```
+
+Please update this with your supplied data.
+
+## Usage
+
+To use `recreatedb` please ensure you have installed Postgres, have updated the `.recreatedb` configuration file, and have a SQL file readily available you wish to load.
+
+```bash
+# Commands
+recreatedb start
+```
+
 ## Install Postgres App
 
 This is a GUI interface for PostgreSQL databases. Find it here: https://postgresapp.com/
@@ -19,34 +56,6 @@ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/pat
 ```
 
 Use which psql to confirm installation while in the virtualenv.
-
-## Install recreatedb
-
-To add `recreatedb` to the your path, clone it then run the following to create a simlink.
-
-```bash
-# Commands
-git clone git@github.com:djstein/bentobox-recreatedb.git
-
-sudo ln -s <path to bentbox-recreatedb>/bin/recreatedb /usr/local/bin/recratedb
-# Example Simlink
-sudo ln -s ~/git/bentobox-recreatedb/bin/recreatedb /usr/local/bin/recreatedb
-```
-
-## Usage
-
-To use `recreatedb` either supply an argument to an .sql backup or if no input is used it will look for `~/Downloads/all_databases.sql`
-
-```bash
-# Commands
-recreatedb
-
-recreatedb all_databases.sql
-
-recreatedb /foo/bar.sql
-```
-
-_NOTE:_ Currently only takes full absolute paths
 
 ## Development
 
